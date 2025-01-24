@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #35596a; /* Windows 11 背景顏色 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  height: 80%;
+  border-radius: 10px; /* 使容器有圓角 */
+  overflow: hidden; /* 避免內容溢出 */
+  z-index: 1; /* 確保不會被背景動畫遮住 */
+}
+
+.folder-container {
+  width: 220px; /* 資料夾區寬度 */
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.folder {
+  width: 120px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+  border-radius: 12px; /* 資料夾背景圓角效果 */
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.folder-icon {
+  font-size: 60px; /* 調整圖示大小 */
+}
+
+.folder p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: white; /* 資料夾字體顏色 */
+}
+
+.folder:hover {
+  background-color: #3a3d4153; /* 滑鼠懸停效果 */
+}
+
+.gap {
+  width: 20px; /* 資料夾與內容之間的間隔 */
+}
+
+.window {
+  flex-grow: 1; /* 讓內容區占滿剩餘的空間 */
+  background-color: #EFF1E4; /* 顯示框背景顏色 */
+  border-radius: 17px; /* 圓角邊框 */
+  padding: 20px;
+  display: none;
+  box-sizing: border-box;
+}
+
+.window-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.mac-buttons {
+  display: flex;
+  gap: 10px; /* 圓點按鈕間距 */
+}
+
+.mac-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.mac-btn.red {
+  background-color: #ff4d4d;
+}
+
+/* 圓點內的符號樣式 */
+.mac-symbol {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  transition: opacity 0.2s ease;
+}
+
+/* 顯示符號 */
+.mac-btn:hover .mac-symbol {
+  opacity: 1; /* 在懸停時顯示符號 */
+}
+
+.mac-btn .mac-symbol {
+  opacity: 0; /* 預設為隱藏 */
+}
+
+.window-content {
+  padding-top: 0;
+  padding-left: 28px;
+  padding-right: 28px;
+  color: black; /* 顯示框中的文字顏色 */
+  font-size: 16px;
+  white-space: pre-line;  /* 保留換行並顯示 */
+  max-height: 60vh;       /* 設定最大高度為螢幕高度的 60% */
+  overflow-y: auto;       /* 允許上下滾動 */
+}
+
+/* 讓滾動條的背景顏色變為透明 */
+.window-content::-webkit-scrollbar {
+  width: 10px;           /* 設定滾動條的寬度 */
+  background-color: transparent;  /* 使背景透明 */
+}
+
+/* 滾動條的滑塊部分 */
+.window-content::-webkit-scrollbar-thumb {
+  background-color: #b0b0b0;  /* 設定滑塊顏色為淺灰色 */
+  border-radius: 5px;        /* 設定圓角 */
+  transition: all 0.3s ease; /* 平滑過渡效果 */
+}
+
+/* 滾動條滑塊的懸停效果 */
+.window-content::-webkit-scrollbar-thumb:hover {
+  background-color: #999;    /* 滑鼠懸停時使滑塊變為較深灰色 */
+  width: 20px;  /* 寬度增加一倍 */
+}
+
+/* setting */

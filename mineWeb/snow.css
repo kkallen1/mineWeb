@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+#snow-container {  
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transition: opacity 500ms;
+  width: 100%;
+  z-index: 0; /* 雪花z軸設為-1，避免影響到其他互動功能 */
+  pointer-events: auto; /* 讓它能夠被點擊(切換開關雪花用) */
+}
+
+.snow {
+  animation: fall ease-in infinite, sway ease-in-out infinite;
+  color: skyblue;
+  position: absolute;
+}
+
+@keyframes fall {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 100vh;
+    opacity: 1;
+  }
+}
+
+@keyframes sway {
+  0% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: 50px;
+  }
+  50% {
+    margin-left: -50px;
+  }
+  75% {
+    margin-left: 50px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}

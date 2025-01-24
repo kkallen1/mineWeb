@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個人網頁</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="snow.css">
+  <link rel="stylesheet" href="setting.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 資料夾區 (左邊) -->
+    <div class="folder-container">
+      <div class="folder" id="folder1" onclick="openFolder('folder1')">
+        <div class="folder-icon">📁</div>
+        <p>個人簡介</p>
+      </div>
+      <div class="folder" id="folder2" onclick="openFolder('folder2')">
+        <div class="folder-icon">📁</div>
+        <p>作品</p>
+      </div>
+      <div class="folder" id="setting" onclick="openFolder('setting')">
+        <div class="folder-icon">⚙️</div>
+        <p>其他</p>
+      </div>
+    </div>
+
+    <!-- 資料夾與顯示內容區之間的間隔 -->
+    <div class="gap"></div>
+
+    <!-- 內容區 (右邊) -->
+    <div id="window" class="window" style="display: none;">
+      <div class="window-header">
+        <!-- 紅色圓圈 (關閉內容區) -->
+        <div class="mac-buttons">
+          <div class="mac-btn red" onclick="closeWindow()">
+            <div class="mac-symbol">✖</div>
+          </div>
+        </div>
+      </div>
+      <div id="window-content" class="window-content"></div>
+    </div>
+  </div>
+  <!-- snow 是參考下面網址中的程式碼所製作
+  https://webdesign.tutsplus.com/how-to-create-animated-snow-on-a-website-with-css-and-javascript--cms-93562t
+  -->
+  <div id="snow-container"></div> <!-- 雪花 -->
+
+  <script src="scripts.js"></script>
+  <script src="snow.js"></script>
+</body>
+</html>
